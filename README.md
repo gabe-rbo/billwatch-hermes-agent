@@ -37,8 +37,9 @@ a card number, bank account, or tax ID — it doesn't need any of them.
 ## The four signals are computed, not guessed
 
 A 6-hour read-only IMAP fetch and a Python ledger that compares your history
-against itself. No model runs on that path at all. The agent only wakes when
-there's a signal, and on most days there isn't one, so it says nothing.
+against itself. No model runs on that path at all. The model does wake once a
+day: a daily 9am cron runs the report skill, which sends you a message only when
+there's an unreported signal. On most days there isn't one, so it says nothing.
 
 Cancellation is always your call: seeing a signal is permission to tell you, not
 permission to act. Without Plow Latch it hands you the exact route; with Latch it
